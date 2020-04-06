@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/pages/telaCliente.dart';
+import 'package:navigation/pages/telaContato.dart';
+import 'package:navigation/pages/telaEmpresa.dart';
+import 'package:navigation/pages/telaServico.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -6,6 +10,50 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  abrirEmpresa(){
+
+      Navigator.push(
+        context,
+         MaterialPageRoute(
+           builder: (context)=>TelaEmpresa(),
+          ),
+      );
+
+  }
+
+  abrirServico(){
+
+      Navigator.push(
+        context,
+         MaterialPageRoute(
+           builder: (context)=>TelaServico(),
+          ),
+      );
+
+  }
+
+  abrirCliente(){
+
+      Navigator.push(
+        context,
+         MaterialPageRoute(
+           builder: (context)=>TelaCliente(),
+          ),
+      );
+
+  }
+
+  abrirContato(){
+
+      Navigator.push(
+        context,
+         MaterialPageRoute(
+           builder: (context)=>TelaContato(),
+          ),
+      );
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,16 +89,12 @@ class _HomeState extends State<Home> {
                 children: <Widget>[
 
                   GestureDetector(
-                    onTap: (){
-                      print('empresa');
-                    },
+                    onTap: () => abrirEmpresa(),
                     child: Image.asset('assets/menu_empresa.png'),
                   ),
 
                   GestureDetector(
-                    onTap: (){
-                      print('servico');
-                    },
+                    onTap: () => abrirServico(),
                     child: Image.asset('assets/menu_servico.png'),
                   ),
                   
@@ -65,16 +109,12 @@ class _HomeState extends State<Home> {
                 children: <Widget>[
 
                   GestureDetector(
-                    onTap: (){
-                      print('cliente');
-                    },
+                    onTap: () => abrirCliente(),
                     child: Image.asset('assets/menu_cliente.png'),
                   ),
 
                   GestureDetector(
-                    onTap: (){
-                      print('contato');
-                    },
+                    onTap: () => abrirContato(),
                     child: Image.asset('assets/menu_contato.png'),
                   ),
 
